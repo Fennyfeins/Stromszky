@@ -1,12 +1,98 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stormzky</title>
     <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
+    <body>
+        <div class="header">
+            <div class="logo">
+                <a href="#">Logo</a>
+            </div>
+            <div>
+                <ul class="items">
+                        <li><a href="#" id="loginBtn" class="Login">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+   
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times</span>
+                    <h1 id="formTitle">Login</h1>
 
-</body>
+                    <div id="login-form-container">
+            
+                        <form id="loginForm" action="index2.html" onsubmit="return validateForm()"> 
+                            <div class="center">
+
+                                <div class="input-box">
+                                    <span class="icon">
+                                        <ion-icon name="person-circle-outline"></ion-icon>
+                                    </span>
+                                    <input id="LoginEmail" class="input-text" type="text" placeholder="Email Address">
+                                </div>
+                            
+                                <div class="input-box">
+                                    <span class="icon">
+                                        <ion-icon name="lock-closed-outline"></ion-icon>
+                                    </span> 
+                                    <input id="LoginPassword" class="input-text" type="text" placeholder="Password">
+                                    
+                                </div>
+                           
+
+                            </div>
+
+                            <div class="forgot-pass-remember-me mt-10">
+                                <div class="forgot-password">
+                                    <a id="ForgotPassword" onclick="ShowForgotPasswordForm();" href="#" >ForgotPassword?</a>
+                                </div>
+                                <div class="remember-me">
+                                    <input id="rememberMe" type="checkbox">
+                                    <label for="rememberMe">Remember Me</label>
+                                </div>
+                            </div>
+
+                            <div class="center-login">
+                                <input class="Submit-Btn" type="submit" value="Login" id="loginBtn">
+                            </div>
+                        </form>
+                    
+
+
+                        </div>
+
+                        <div id="ForgotPasswordForm">
+                            <form action="">
+                                <div class="center mt-20">
+                                    <div class="input-box">
+                                        <span class="icon">
+                                            <ion-icon name="mail-outline"></ion-icon>
+                                        </span>
+                                        <input class="input-text" type="email" id="forgotPassEmail"placeholder="Email Address">
+                                    </div>
+                                  
+                                </div>
+                                <div class="center mt-20">
+                                    <input class="Submit-Btn" type="submit" value="Reset Password"id="PasswordResetBtn">
+                                </div>
+                            </form>
+                            <p class="center mt-20 already-have-account">
+                                Back to the <a href="#" onclick="ShowLoginForm();" >Login page</a> 
+                            </p>
+                        </div>
+                    
+                        <!--<button>Anmelden über Externe(google, facebook, microsoft)</button>-->
+                    </div>        
+                </div> 
+            </div>
+        </div>
+        <script src="scripts.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    </body>
 </html>

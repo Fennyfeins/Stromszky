@@ -1,4 +1,4 @@
-@import url("https//fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 *{
     margin: 0;
@@ -8,8 +8,259 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-header {
+.header {
     height: 100vh;
-    background-image:
+    background-image: url(./image/mountains-2120004_1920.jpg);
+    background-color: rgba(0, 0, 0, 0.5);      
+}
+
+nav {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+
+}
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.items {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+.items a {
+    color: #fff;
+    text-decoration: none;
+}
+.Login {
+    border: 2px solid #fff;
+    padding: 3px 1rem;
+    border-radius: 5px;
+}
+
+.modal {
+    display:none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background: rgba(235, 232, 232, 0.137)
+}
+
+.modal-content {
+    width: 100%;
+    padding: 30px;
+    color: #ffffffe5;
+    margin: 12% auto;
+    position: relative;
+    max-width: 450px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.055);
+    inset: 0px 0px 20px rgba(212, 208, 208, 0.89);
+}   
+.close{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.close:hover {
+
+    color: #c52b2b;
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.center {
+    padding-right: 100px; 
+}
+
+
+/* Grundlayout für den Container */
+#login-form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.144);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}   
+
+
+#ForgotPasswordForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.144);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+
+}
+
+/*Input box Abstände und Verschiebungen*/
+.input-box{
+    margin-bottom: 12px;
+    text-align: left;
+    padding-right: 40px;
+
     
 }
+
+/* Eingabefelder */
+.input-text {
+    width: 200%;
+    max-width: 300px;
+    padding: 12px;
+    padding-right: 40px;
+    border-radius: 10px;
+    border: 2px solid;
+    color: rgb(20, 18, 18);
+    background-color: rgba(255, 255, 255, 0.267);
+    box-shadow: 0 0 10px rgba(7, 7, 7, 0);
+}
+
+
+/*Design und Position der Icons*/
+.icon {
+    position: absolute;
+    right: 10px; 
+    color: #fff; 
+    font-size: 40px; 
+    pointer-events: none; 
+}
+
+
+
+
+/* Fokus auf Eingabefelder */
+.input-text:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+
+/* Fenster für ForgotPassword */
+#ForgotPasswordForm{
+    display: none;
+}
+
+
+
+/* Link zum Zurücksetzen des Passworts */
+.forgot-password a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Checkbox und Beschriftung für 'Remember Me' */
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remember-me input[type="checkbox"] {
+    transform: scale(1.2);
+}
+
+/* Container für 'Forgot Password' und 'Remember Me' */
+.forgot-pass-remember-me {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    width: 200%;
+    max-width: 300px;
+}
+
+/* Button für Login und Passwort-Reset */
+.Submit-Btn {
+    color: #fff;
+    background: linear-gradient(to right, #ff8a00, #e52e71);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.5s ease-out;
+    width: 100%;
+    max-width: 300px;
+}
+
+.Submit-Btn:hover {
+    background: linear-gradient(to right, #e52e71, #ff8a00);
+}
+
+/* Zurück zum Login-Link im 'Forgot Password'-Formular */
+.already-have-account {
+    margin-top: 15px;
+    color: #fff;
+}
+
+.already-have-account a {
+    color: #ff8a00;
+    text-decoration: none;
+}
+
+.already-have-account a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
