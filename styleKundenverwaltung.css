@@ -4,7 +4,21 @@
     box-sizing: border-box;
 }
 
+html, body {
+    width: 100%;
+    height: 100%; /* Stellt sicher, dass sowohl die Breite als auch die Höhe 100% betragen */
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    display: flex;
+    width: 100%; /* Stellt sicher, dass die Breite des Inhalts 100 % beträgt */
+    height: 100%; /* Stellt sicher, dass der Body die volle Höhe des Fensters einnimmt */
+    margin: 0; /* Entfernt jegliche Standard-Margin */
+    padding: 0; /* Entfernt jegliche Standard-Padding */
+    display: flex;
+    flex-direction: column; /* Ermöglicht eine flexiblere Layout-Steuerung */
     font-family: Arial, sans-serif;
     background-color: #333;
     color: white;
@@ -12,11 +26,15 @@ body {
 
 .container {
     width: 100%;
-    max-width: 1200px;
+    max-width: none;
     margin: 0 auto;
     padding: 20px;
     background-color: #000;
     border: 2px solid #666;
+    flex-grow: 1; /* Sorgt dafür, dass der Container den verfügbaren Platz füllt */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Positioniert Inhalt innerhalb des Containers */
 }
 
 header {
