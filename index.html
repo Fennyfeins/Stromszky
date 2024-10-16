@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stormzky</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
     <body>
         <div class="header">
@@ -18,6 +19,7 @@
                 </nav>
             </div>
         </div>
+
    
             <div id="myModal" class="modal">
                 <div class="modal-content">
@@ -29,18 +31,21 @@
                         <form id="loginForm" action="index2.html" onsubmit="return validateForm()"> 
                             <div class="center">
 
-                                <div class="input-box">
-                                    <span class="icon">
+                                <div class="input-box1">
+                                    <span class="person">
                                         <ion-icon name="person-circle-outline"></ion-icon>
                                     </span>
-                                    <input id="LoginEmail" class="input-text" type="text" placeholder="Email Address">
+                                    <input id="LoginEmail" class="input-text1" type="text" placeholder="Benutzer" required>
                                 </div>
                             
-                                <div class="input-box">
-                                    <span class="icon">
+                                <div class="input-box2">
+                                    <span class="lock-closed">
                                         <ion-icon name="lock-closed-outline"></ion-icon>
                                     </span> 
-                                    <input id="LoginPassword" class="input-text" type="text" placeholder="Password">
+                                    <input id="loginPassword" class="input-text2" type="password" placeholder="Passwort" required>
+                                    <span class="eye-off" id="login-eye">
+                                        <ion-icon name="eye-off-outline"></ion-icon>
+                                    </span>
                                     
                                 </div>
                            
@@ -49,16 +54,16 @@
 
                             <div class="forgot-pass-remember-me mt-10">
                                 <div class="forgot-password">
-                                    <a id="ForgotPassword" onclick="ShowForgotPasswordForm();" href="#" >ForgotPassword?</a>
+                                    <a id="ForgotPassword" onclick="ShowForgotPasswordForm();" href="#" >Passwort vergessen</a>
                                 </div>
                                 <div class="remember-me">
                                     <input id="rememberMe" type="checkbox">
-                                    <label for="rememberMe">Remember Me</label>
+                                    <label for="rememberMe">an mich erinnern</label>
                                 </div>
                             </div>
 
                             <div class="center-login">
-                                <input class="Submit-Btn" type="submit" value="Login" id="loginBtn">
+                                <input class="Submit-Btn1" type="submit" value="Login" id="loginBtn">
                             </div>
                         </form>
                     
@@ -69,30 +74,33 @@
                         <div id="ForgotPasswordForm">
                             <form action="">
                                 <div class="center mt-20">
-                                    <div class="input-box">
-                                        <span class="icon">
+                                    <div class="input-box3">
+                                        <span class="mail-outline">
                                             <ion-icon name="mail-outline"></ion-icon>
                                         </span>
-                                        <input class="input-text" type="email" id="forgotPassEmail"placeholder="Email Address">
+                                        <input class="input-text3" type="email" id="forgotPassEmail" placeholder="Email Addresse" required>
                                     </div>
                                   
                                 </div>
                                 <div class="center mt-20">
-                                    <input class="Submit-Btn" type="submit" value="Reset Password"id="PasswordResetBtn">
+                                    <input class="Submit-Btn2" onclick="PasswordResetBtn()" type="submit" value="Passwort zurücksetzen"id="passwordResetBtn">
                                 </div>
                             </form>
                             <p class="center mt-20 already-have-account">
-                                Back to the <a href="#" onclick="ShowLoginForm();" >Login page</a> 
+                                Zurück zu der <a href="#" onclick="ShowLoginForm();" >Anmeldeseite</a> 
                             </p>
                         </div>
                     
-                        <!--<button>Anmelden über Externe(google, facebook, microsoft)</button>-->
+                        <!--<button onclick="signIn()">Anmelden über Microsoft</button>
+                        <script src="./public/auth.js"></script>-->
                     </div>        
                 </div> 
             </div>
         </div>
         <script src="scripts.js"></script>
+        <script src="emailotp.js"></script>
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        
     </body>
 </html>

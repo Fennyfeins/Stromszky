@@ -1,11 +1,10 @@
 var modal = document.getElementById("myModal");
-var btn = document.getElementById("loginBtn");
+var loginBtn = document.getElementById("loginBtn");
 var span = document.getElementsByClassName("close")[0];
 
 
 
-
-btn.onclick = function () {
+loginBtn.onclick = function () {
     modal.style.display = "block";
 };
 span.onclick = function () {
@@ -56,7 +55,7 @@ function ShowLoginForm(){
 
 function ShowForgotPasswordForm(){
 
-    SetTitle("Forgot Password");
+    SetTitle("Passwort vergessen");
 
     ShowHideForm("login-form-container", "Hide");
     ShowHideForm("ForgotPasswordForm", "Show");
@@ -64,5 +63,51 @@ function ShowForgotPasswordForm(){
 
 }
 
+let loginEye = document.getElementById("login-eye");
+let password = document.getElementById("loginPassword");
+
+loginEye.onclick = function () {
+    if( password.type === "password"){
+        password.type = "text";
+        loginEye.querySelector('ion-icon').setAttribute('name', 'eye-outline');
+    }else{
+        password.type = "password";
+        loginEye.querySelector('ion-icon').setAttribute('name', 'eye-off-outline');
+    }
+}
 
 
+
+
+
+
+
+
+
+
+
+
+/*function signIn(){
+
+const express = require('express');
+const path = require('path');
+ 
+
+const app = express();
+const port = 3000;
+
+// Statische Dateien bereitstellen (optional, wenn du separate JS-Dateien hast)
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+    res.send(`
+        <button onclick="signIn()">Anmelden über Microsoft</button>
+        <script src="/auth.js"></script> <!-- Client-seitiges MSAL-Skript -->
+    `);
+});
+
+app.listen(port, () => {
+    console.log(`App läuft unter http://localhost:${port}`);
+});
+
+}*/
