@@ -18,9 +18,9 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS'); // Erlaube GET, POST und OPTIONS-Anfragen
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Erlaube die Content-Type-Header
 
-    // Überprüfe, ob die Anfrage eine 'OPTIONS'-Anfrage ist (CORS Preflight-Anfrage)
+    // ï¿½berprï¿½fe, ob die Anfrage eine 'OPTIONS'-Anfrage ist (CORS Preflight-Anfrage)
     if (req.method === 'OPTIONS') {
-        res.writeHead(204); // Sende eine leere Antwort für die Preflight-Anfrage
+        res.writeHead(204); // Sende eine leere Antwort fï¿½r die Preflight-Anfrage
         res.end();
         return;
     }
@@ -32,7 +32,7 @@ const server = http.createServer(async (req, res) => {
     // Setze den Content-Type der Antwort auf JSON
     res.setHeader('Content-Type', 'application/json');
 
-    // Überprüfe, ob der Pfad '/get-data' ist und die Methode 'GET' ist
+    // ï¿½berprï¿½fe, ob der Pfad '/get-data' ist und die Methode 'GET' ist
     if (path === '/get-data' && req.method === 'GET') {
         let conn;
         try {
@@ -40,7 +40,7 @@ const server = http.createServer(async (req, res) => {
             conn = await pool.getConnection();
             const rows = await conn.query("SELECT * FROM kunden");
 
-            // Sende die Daten als JSON zurück
+            // Sende die Daten als JSON zurï¿½ck
             res.writeHead(200);
             res.end(JSON.stringify(rows));
         } catch (err) {
@@ -49,10 +49,10 @@ const server = http.createServer(async (req, res) => {
             res.writeHead(500);
             res.end(JSON.stringify({ error: "Fehler beim Abrufen der Daten" }));
         } finally {
-            if (conn) conn.release(); // Verbindung zurückgeben
+            if (conn) conn.release(); // Verbindung zurï¿½ckgeben
         }
     } else {
-        // 404 Not Found für unbekannte Routen
+        // 404 Not Found fï¿½r unbekannte Routen
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('404 Not Found');
     }
@@ -60,5 +60,5 @@ const server = http.createServer(async (req, res) => {
 
 // Starte den Server auf Port 3000
 server.listen(3000, () => {
-    console.log('Server läuft auf Port 3000');
+    console.log('Server lï¿½uft auf Port 3000');
 });
