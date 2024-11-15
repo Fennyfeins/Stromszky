@@ -9,10 +9,17 @@
     font-family: "Poppins", sans-serif;
 }
 .header {
+    position: relative;
     height: 100vh;
-    background-image: url(./image/mountains-2120004_1920.jpg);
-    background-color: rgba(0, 0, 0, 0.5);      
+    background-image: url(./image/die-wahre-identita88t-vonsauron-die-ringe-der-macht-herr-der-ringe-ddp_00437743.webp);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0); /* Hintergrundfarbe */
+    overflow: hidden;
 }
+
+
 
 nav {
     color: #fff;
