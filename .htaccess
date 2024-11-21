@@ -1,0 +1,26 @@
+# Sperre bekannte schlechte Bots
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} ^.*(crawler|spider|bot|scraper|curl|wget|python|php).*$ [NC]
+RewriteRule ^ - [F,L]
+
+# Zugriffsrate begrenzen (Flooding verhindern)
+<Limit GET POST>
+    Order Allow,Deny
+    Allow from all
+    Deny from 1.2.3.4   # Ersetze 1.2.3.4 mit der IP-Adresse des Angreifers
+</Limit>
+
+# Blockiere IP-Adressen oder IP-Bereiche
+<Files "*">
+    Order Deny,Allow
+    Deny from 123.456.789.0/24  # Beispiel für einen IP-Block
+</Files>
+
+# Blockiere leere oder unbekannte User-Agents
+RewriteCond %{HTTP_USER_AGENT} ^-?$
+RewriteRule .* - [F,L]
+
+# Schutz gegen Referrer-Spam
+RewriteCond %{HTTP_REFERER} example\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} anotherdomain\.com
+RewriteRule .* - [F]
