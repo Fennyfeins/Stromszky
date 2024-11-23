@@ -7,6 +7,11 @@ import { AppComponent } from './app.component';
 import { CustomerSearchComponent } from './customer-search/customer-search.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+// Angular Material
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +19,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    // Angular Material
+    MatButtonModule, 
+    MatDividerModule, 
+    MatIconModule
   ],
   providers: [
     provideAnimationsAsync(),

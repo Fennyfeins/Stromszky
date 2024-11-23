@@ -1,4 +1,9 @@
-<button (click)="callServiceFunktion()">Test</button> 
+<button mat-fab extended (click)="callServiceFunktion()">
+    <mat-icon>search</mat-icon>
+    Search
+</button>
+  
+
 <ng-container *ngIf="customer$ | async as customer">
     <p>{{ customer.id }}</p>
     <p>{{ customer.firstname }}</p>
