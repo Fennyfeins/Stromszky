@@ -1,6 +1,3 @@
-import { DatePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-
 export interface Customer {
     id: number;
     firstname: string;
@@ -12,4 +9,4 @@ export interface Customer {
     postalCode: string;
     city: string;
     iban: string;
-}
+  }

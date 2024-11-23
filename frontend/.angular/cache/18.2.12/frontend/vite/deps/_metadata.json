@@ -1,52 +1,58 @@
 {
-  "hash": "671dba26",
-  "configHash": "85f0b9b4",
+  "hash": "c7fbf4cb",
+  "configHash": "e1ce0833",
   "lockfileHash": "53386e1a",
-  "browserHash": "0b8e94b5",
+  "browserHash": "c17d4ba1",
   "optimized": {
     "@angular/core": {
       "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "521c9d9e",
+      "fileHash": "588a307d",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "f4658606",
+      "fileHash": "71915a27",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "3cb8ebc3",
+      "fileHash": "791edfc4",
       "needsInterop": false
     },
     "@angular/platform-browser/animations/async": {
       "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/animations/async.mjs",
       "file": "@angular_platform-browser_animations_async.js",
-      "fileHash": "45c00262",
+      "fileHash": "a4422e73",
       "needsInterop": false
     },
     "@angular/common/http": {
       "src": "../../../../../../node_modules/@angular/common/fesm2022/http.mjs",
       "file": "@angular_common_http.js",
-      "fileHash": "e25af951",
+      "fileHash": "2bb12614",
+      "needsInterop": false
+    },
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "4510c6bf",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-OO6XEKWC": {
-      "file": "chunk-OO6XEKWC.js"
+    "chunk-GE6N4L2L": {
+      "file": "chunk-GE6N4L2L.js"
     },
-    "chunk-IQPKFCE6": {
-      "file": "chunk-IQPKFCE6.js"
+    "chunk-VB7RPPRT": {
+      "file": "chunk-VB7RPPRT.js"
     },
-    "browser-HUPJP2XX": {
-      "file": "browser-HUPJP2XX.js"
+    "browser-HDT774GQ": {
+      "file": "browser-HDT774GQ.js"
     },
-    "chunk-45WBIPFN": {
-      "file": "chunk-45WBIPFN.js"
+    "chunk-2VDO6DDW": {
+      "file": "chunk-2VDO6DDW.js"
     },
     "chunk-KNRYTDUQ": {
       "file": "chunk-KNRYTDUQ.js"
