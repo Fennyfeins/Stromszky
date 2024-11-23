@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+// Interface für die Datenstruktur
 import { Customer } from './customer';
 
 @Injectable({

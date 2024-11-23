@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Customer } from '../customer';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-customer-search',
@@ -7,28 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './customer-search.component.scss'
 })
 export class CustomerSearchComponent implements OnInit{
-  id: number;
-  firstname: string;
-  surname: string;
-  dateOfBirth: Date;
-  phone: string;
-  street: string;
-  number: string;
-  postalCode: string;
-  city: string;
-  iban: string;
 
-  constructor() {
-      this.id = -1;
-      this.firstname = '';
-      this.surname = '';
-      this.dateOfBirth = new Date();
-      this.phone = '';
-      this.street = '';
-      this.number = '';
-      this.postalCode = '';
-      this.city = '';
-      this.iban = '';
+  // $=Namenskonvention für Variablen mit Observer. 
+  // !=Meldet dem Compiler dass die Variable erst später Initialisiert wird.
+  customer$!: Observable<Customer>;
+
+  constructor(private apiService: ApiService) {}
+
+  // Ruft die Funktion zum laden des Kunden in api.service.ts auf.
+  callServiceFunktion(): Observable<Customer> {
+    this.customer$ = this.apiService.getCustomer();
+    return this.customer$;
   }
 
   ngOnInit(): void {
