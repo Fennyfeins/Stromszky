@@ -12,4 +12,8 @@ export class ApiService {
   getTestMessage(): Observable<any> {
     return this.http.get('http://localhost:8000/api/test/');
   }
+
+  getCustomer(): Observable<any> {
+    return this.http.get('http://localhost:8000/api/customer/');
+  }
 }
