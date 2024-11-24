@@ -3,11 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppRoutingModule } from './app-routing.module';
-
-import { AppComponent } from './app.component';
-import { CustomerSearchComponent } from './customer-search/customer-search.component';
-import { CustomerTableComponent } from './customer-table/customer-table.component';
-
 //Angular Material
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -17,6 +12,13 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { AppComponent } from './app.component';
+import { CustomerSearchComponent } from './customer-search/customer-search.component';
+import { CustomerTableComponent } from './customer-table/customer-table.component';
+import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     CustomerSearchComponent,
     CustomerTableComponent,
+    EditDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
   ],
   providers: [
     provideAnimationsAsync(),
