@@ -9,7 +9,8 @@ import { Customer } from './customer';
 })
 export class ApiService {
   private apiUrlTest = 'http://localhost:8000/api/test/';
-  private apiUrlCustomer = 'http://localhost:8000/api/singleCustomer/';
+  private apiUrlSingleCustomer = 'http://localhost:8000/api/singleCustomer/';
+  private apiUrlAllCustomers = 'http://localhost:8000/api/allCustomers/';
 
   constructor(private http: HttpClient) {
   }
@@ -19,6 +20,10 @@ export class ApiService {
   }
 
   getCustomer(): Observable<Customer> {
-    return this.http.get<Customer>(this.apiUrlCustomer);
+    return this.http.get<Customer>(this.apiUrlSingleCustomer);
+  }
+
+  getAllCustomers(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.apiUrlAllCustomers);
   }
 }
