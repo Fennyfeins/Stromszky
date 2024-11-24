@@ -9,7 +9,7 @@ import { Customer } from './customer';
 })
 export class ApiService {
   private apiUrlTest = 'http://localhost:8000/api/test/';
-  private apiUrlCustomer = 'http://localhost:8000/api/customer/';
+  private apiUrlCustomer = 'http://localhost:8000/api/singleCustomer/';
 
   constructor(private http: HttpClient) {
   }
