@@ -49,15 +49,36 @@ export class CustomerTableComponent {
     this.dataSource.filter = value;
   }
 
-  OpenDialog() {
+  OpenEmptyDialog() {
     var _dialog = this.dialog.open(EditDialogComponent,{
       data: {
-        title: 'User Edit'
+        title: 'Add Customer'
       }
     });
     _dialog.afterClosed().subscribe(item=>{
       this.loadCustomer();
     })
+  }
+
+  OpenDialog(rowData: any) {
+    var _dialog = this.dialog.open(EditDialogComponent,{
+      data: rowData
+    });
+    _dialog.afterClosed().subscribe(item=>{
+      this.loadCustomer();
+    })
+
+    _dialog.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Dialog wurde geschlossen', result);
+      }
+    });
+  }
+
+  DeleteRow(rowData: any){
+    this.ApiService.deleteCustomer(rowData.id).subscribe(response=>{
+      this.loadCustomer();
+    });
   }
 
   loadCustomer() {

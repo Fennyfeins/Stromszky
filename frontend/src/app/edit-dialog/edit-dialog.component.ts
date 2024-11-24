@@ -23,28 +23,27 @@ export class EditDialogComponent implements OnInit{
   ngOnInit(): void {
     this.inputdata = this.data;
 
-    this.myform=this.buildr.group({
-      id:this.buildr.control(''),
-      firstname:this.buildr.control(''),
-      surname:this.buildr.control(''),
-      dateOfBirth:this.buildr.control(''),
-      phone:this.buildr.control(''),
-      street:this.buildr.control(''),
-      number:this.buildr.control(''),
-      postalCode:this.buildr.control(''),
-      city:this.buildr.control(''),
-      iban:this.buildr.control('')
-    })
+    this.myform = this.buildr.group({
+      id: [this.data.id || ''],
+      firstname: [this.data.firstname || ''],
+      surname: [this.data.surname || ''],
+      dateOfBirth: [this.data.dateOfBirth || ''],
+      phone: [this.data.phone || ''],
+      street: [this.data.street || ''],
+      number: [this.data.number || ''],
+      postalCode: [this.data.postalCode || ''],
+      city: [this.data.city || ''],
+      iban: [this.data.iban || '']
+    });
   }
 
   onSave(): void {
-    this.dialogRef.close('Save Button');
+    this.dialogRef.close(this.data);
   }
 
-  SaveUser() {
+  saveUser() {
     this.ApiService.createCustomer(this.myform.value).subscribe(response=>{
       this.onSave();
-
     });
   }
 }
