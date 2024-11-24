@@ -29,7 +29,7 @@ frontend/.vscode/*
 .history/*
 
 # Miscellaneous
-frontend/.angular/cache/*
+frontend/.angular/cache/
 .sass-cache/
 /connect.lock
 /coverage
@@ -43,4 +43,4 @@ Thumbs.db
 
 # custom
 venv/
-backend/api/__pycache__/*
+backend/api/__pycache__/

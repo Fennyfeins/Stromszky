@@ -16,6 +16,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
+//Card
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import {MatSortModule} from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatCardModule,
   ],
   providers: [
     provideAnimationsAsync(),
