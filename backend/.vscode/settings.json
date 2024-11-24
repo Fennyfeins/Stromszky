@@ -1,0 +1,8 @@
+{
+  "python.pythonPath": "./venv/bin/python",  // Pfad zur Python-Binary in der virtuellen Umgebung
+  "python.analysis.extraPaths": [
+    "./api",        // Django-App-Verzeichnis (API)
+    "./backend",    // Wurzelverzeichnis des Django-Projekts (falls benötigt)
+    "./"            // Hauptverzeichnis des Backends
+  ]
+}

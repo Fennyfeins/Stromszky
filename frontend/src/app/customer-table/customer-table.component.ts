@@ -62,7 +62,7 @@ export class CustomerTableComponent {
 
   loadCustomer() {
     // API-Aufruf, um alle Kunden zu laden
-    this.ApiService.getAllCustomers().subscribe(response => {
+    this.ApiService.getCustomers().subscribe(response => {
       // Die vom API zurückgegebene Kundenliste wird in die lokale Variable gespeichert
       this.customerList = response;
 

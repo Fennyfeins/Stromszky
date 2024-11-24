@@ -13,6 +13,8 @@ export class ApiService {
   private apiUrlAllCustomers = 'http://localhost:8000/api/allCustomers/';
   private apiUrlSetCustomer = 'http://localhost:8000/api/postCustomer/';
 
+  private apiUrl = 'http://localhost:8000/api/customers/';
+
   constructor(private http: HttpClient) {
   }
 
@@ -32,5 +34,16 @@ export class ApiService {
   //TODO
   postCustomer(data:any) {
     return this.http.post(this.apiUrlSingleCustomer, data);
+  }
+
+
+
+  
+  getCustomers(): Observable<Customer[]> {
+    return this.http.get<Customer[]>(this.apiUrl);
+  }
+
+  createCustomer(customer: Customer): Observable<Customer> {
+    return this.http.post<Customer>(this.apiUrl, customer);
   }
 }
