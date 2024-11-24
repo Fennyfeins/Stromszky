@@ -46,4 +46,20 @@ export class EditDialogComponent implements OnInit{
       this.onSave();
     });
   }
+
+  editUser() {
+    this.ApiService.updateCustomer(this.myform.value.id, this.myform.value).subscribe(response=>{
+      this.onSave();
+    });
+  }
+
+  onSubmit(): void {
+    if (this.data?.title === 'Edit Customer') {
+      console.log('editUser');
+      this.editUser();
+    } else {
+      console.log('addUser');
+      this.saveUser();
+    }
+  }
 }

@@ -61,8 +61,14 @@ export class CustomerTableComponent {
   }
 
   OpenDialog(rowData: any) {
+    //Dialog Titel zu Tabellendaten hinzufuegen
+    const dataWithTitle = {
+      ...rowData, 
+      title: 'Edit Customer'
+    }
+
     var _dialog = this.dialog.open(EditDialogComponent,{
-      data: rowData
+      data: dataWithTitle
     });
     _dialog.afterClosed().subscribe(item=>{
       this.loadCustomer();

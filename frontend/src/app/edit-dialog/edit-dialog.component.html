@@ -1,7 +1,7 @@
 <form [formGroup]="myform" (ngSubmit)="onSave()">
 
   <!-- Titel mit dynamischen Daten -->
-  <h1 mat-dialog-title>{{data?.title || 'Edit Customer'}}</h1>
+  <h1 mat-dialog-title>{{data?.title || 'default'}}</h1>
 
   <div mat-dialog-content>
     <!-- ID-Feld -->
@@ -68,7 +68,7 @@
   <!-- Aktionen -->
   <div mat-dialog-actions>
     <button mat-button mat-dialog-close>Abbrechen</button>
-    <button mat-button (click)="saveUser()">Speichern</button>
+    <button mat-button (click)="onSubmit()">Speichern</button>
   </div>
 
 </form>
