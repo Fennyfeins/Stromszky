@@ -42,7 +42,7 @@ export class EditDialogComponent implements OnInit{
   }
 
   SaveUser() {
-    this.ApiService.postCustomer(this.myform.value).subscribe(response=>{
+    this.ApiService.createCustomer(this.myform.value).subscribe(response=>{
       this.onSave();
 
     });

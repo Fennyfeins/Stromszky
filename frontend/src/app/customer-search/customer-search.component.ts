@@ -16,12 +16,6 @@ export class CustomerSearchComponent implements OnInit{
 
   constructor(private apiService: ApiService) {}
 
-  // Ruft die Funktion zum laden des Kunden in api.service.ts auf.
-  callServiceFunktion(): Observable<Customer> {
-    this.customer$ = this.apiService.getCustomer(1);
-    return this.customer$;
-  }
-
   ngOnInit(): void {
   }
 }

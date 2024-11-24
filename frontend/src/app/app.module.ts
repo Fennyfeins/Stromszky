@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AppRoutingModule } from './app-routing.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 //Angular Material
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
@@ -20,7 +21,6 @@ import { AppComponent } from './app.component';
 import { CustomerSearchComponent } from './customer-search/customer-search.component';
 import { CustomerTableComponent } from './customer-table/customer-table.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
-
 
 
 @NgModule({
