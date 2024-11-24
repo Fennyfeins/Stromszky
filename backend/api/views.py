@@ -22,3 +22,8 @@ def single_customer(request):
             'iban': obj.iban     
         }
         return JsonResponse(data)
+
+def all_customers(request):
+    objects = Customer.objects.all().values()
+    data = list(objects)
+    return JsonResponse(data, safe=False)
