@@ -1,11 +1,62 @@
-<h1 mat-dialog-title>Bearbeiten</h1>
-<div mat-dialog-content>
-  <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input matInput [(ngModel)]="data.name">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Abbrechen</button>
-  <button mat-button (click)="onSave()">Speichern</button>
-</div>
+<form [formGroup]="myform" (ngSubmit)="SaveUser()">
+
+  <h1 mat-dialog-title>{{inputdata.title}}</h1>
+
+  <div mat-dialog-content>
+    <mat-form-field class="edit-fields">
+      <mat-label>id</mat-label>
+      <input matInput formControlName="id">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>firstname</mat-label>
+      <input matInput formControlName="firstname">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>surname</mat-label>
+      <input matInput formControlName="surname">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>dateOfBirth</mat-label>
+      <input matInput formControlName="dateOfBirth">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>phone</mat-label>
+      <input matInput formControlName="phone">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>street</mat-label>
+      <input matInput formControlName="street">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>number</mat-label>
+      <input matInput formControlName="number">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>postalCode</mat-label>
+      <input matInput formControlName="postalCode">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>city</mat-label>
+      <input matInput formControlName="city">
+    </mat-form-field>
+
+    <mat-form-field class="edit-fields">
+      <mat-label>iban</mat-label>
+      <input matInput formControlName="iban">
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Abbrechen</button>
+    <button mat-button (click)="onSave()">Speichern</button>
+  </div>
+
+</form>

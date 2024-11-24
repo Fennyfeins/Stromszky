@@ -4,6 +4,8 @@ import { Customer } from '../customer';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 @Component({
   selector: 'app-customer-table',
@@ -38,8 +40,27 @@ export class CustomerTableComponent {
   @ViewChild(MatSort) sort!: MatSort;
 
   // Konstruktor wird beim Erstellen der Komponente aufgerufen
-  constructor(private ApiService: ApiService) {
+  constructor(private ApiService: ApiService, private dialog:MatDialog) {
+    this.loadCustomer();
+  }
 
+  Filterchange(data:Event){
+    const value=(data.target as HTMLInputElement).value;
+    this.dataSource.filter = value;
+  }
+
+  OpenDialog() {
+    var _dialog = this.dialog.open(EditDialogComponent,{
+      data: {
+        title: 'User Edit'
+      }
+    });
+    _dialog.afterClosed().subscribe(item=>{
+      this.loadCustomer();
+    })
+  }
+
+  loadCustomer() {
     // API-Aufruf, um alle Kunden zu laden
     this.ApiService.getAllCustomers().subscribe(response => {
       // Die vom API zurückgegebene Kundenliste wird in die lokale Variable gespeichert
@@ -53,10 +74,5 @@ export class CustomerTableComponent {
       // Sort wird mit der Datenquelle verknüpft, um die Sortierung zu ermöglichen
       this.dataSource.sort = this.sort;
     });
-  }
-
-  Filterchange(data:Event){
-    const value=(data.target as HTMLInputElement).value;
-    this.dataSource.filter = value;
   }
 }

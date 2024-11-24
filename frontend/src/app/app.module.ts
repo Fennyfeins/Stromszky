@@ -13,6 +13,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+//Angular Forms
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CustomerSearchComponent } from './customer-search/customer-search.component';
@@ -42,6 +44,9 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+
+    //Angular Forms
+    ReactiveFormsModule,
   ],
   providers: [
     provideAnimationsAsync(),
