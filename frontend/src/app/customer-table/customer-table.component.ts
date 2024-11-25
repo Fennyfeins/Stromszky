@@ -73,12 +73,6 @@ export class CustomerTableComponent {
     _dialog.afterClosed().subscribe(item=>{
       this.loadCustomer();
     })
-
-    _dialog.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('Dialog wurde geschlossen', result);
-      }
-    });
   }
 
   DeleteRow(rowData: any){

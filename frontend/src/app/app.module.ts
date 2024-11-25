@@ -21,6 +21,8 @@ import { AppComponent } from './app.component';
 import { CustomerSearchComponent } from './customer-search/customer-search.component';
 import { CustomerTableComponent } from './customer-table/customer-table.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 
 @NgModule({
@@ -29,6 +31,8 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     CustomerSearchComponent,
     CustomerTableComponent,
     EditDialogComponent,
+    LoginPageComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
