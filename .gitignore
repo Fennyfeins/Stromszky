@@ -44,3 +44,4 @@ Thumbs.db
 # custom
 venv/
 backend/api/__pycache__/
+backend/backend/__pycache__/
