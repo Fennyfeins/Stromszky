@@ -1,16 +1,49 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import AuthenticationForm
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.http import JsonResponse
+
 from .models import Customer
 from rest_framework.views import APIView
+
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import CustomerSerializer
 from django.shortcuts import get_object_or_404
-from rest_framework.permissions import AllowAny
+
+@csrf_exempt
+@api_view(['GET', 'POST'])
+def authentication_view(request):
+    if request.method == 'GET':
+        form = AuthenticationForm()
+        return render(request, 'login.html', {'form': form})
+
+    elif request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+
+            if user is not None:
+                login(request, user)  # Erzeugt die Session
+            else:
+                return JsonResponse({"error": "Invalid credentials"}, status=401)
+
+            return JsonResponse({"message": "Login successful", "redirect_url": "/api/customers/"}, status=200)
+        else:
+            return render(request, 'login.html', {'form': form})
+
+
+@csrf_exempt
+@api_view(['GET'])
+def logout_view(request):
+    logout(request)
+    return redirect('login-api')
 
 class CustomerView(APIView):
-    permission_classes = [AllowAny]
-
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         customers = Customer.objects.all()
         serializer = CustomerSerializer(customers, many=True)
