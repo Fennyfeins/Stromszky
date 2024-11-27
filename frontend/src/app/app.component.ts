@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth.service.js';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -16,13 +17,25 @@ export class AppComponent {
   ) {}
 
   ngOnInit(): void {
-    this.isConfirmed = this.authService.isUserConfirmed();
+     // Überprüfe den Status beim Start der App
+     this.updateButtonStatus();
+
+     // Aktualisiere den Status bei jeder Navigation
+     this.router.events
+       .pipe(filter(event => event instanceof NavigationEnd))
+       .subscribe(() => {
+         this.updateButtonStatus();
+       });
   }
   
   logout(): void {
     this.authService.logout();
-    this.isConfirmed = false; 
+    this.updateButtonStatus(); 
     console.log('Benutzer wurde ausgeloggt.');
     this.router.navigate(['/login']);
+  }
+
+  private updateButtonStatus(): void {
+    this.isConfirmed = this.authService.isUserConfirmed();
   }
 }
