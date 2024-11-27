@@ -3,8 +3,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import api_view
+from django.views import View
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.http import JsonResponse
+import json
 
 from .models import Customer
 from rest_framework.views import APIView
@@ -15,32 +17,18 @@ from .serializers import CustomerSerializer
 from django.shortcuts import get_object_or_404
 
 @csrf_exempt
-@api_view(['GET', 'POST'])
-def authentication_view(request):
-    if request.method == 'GET':
-        form = AuthenticationForm()
-        return render(request, 'login.html', {'form': form})
+def login_view(request):
+    if request.method == 'POST':
+        body = json.loads(request.body)
+        username = body.get('username')
+        password = body.get('password')
 
-    elif request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
+        user = authenticate(username=username, password=password)
 
-            if user is not None:
-                login(request, user)  # Erzeugt die Session
-            else:
-                return JsonResponse({"error": "Invalid credentials"}, status=401)
-
-            return JsonResponse({"message": "Login successful", "redirect_url": "/api/customers/"}, status=200)
-        else:
-            return render(request, 'login.html', {'form': form})
-
-
-@csrf_exempt
-@api_view(['GET'])
-def logout_view(request):
-    logout(request)
-    return redirect('login-api')
+        if user:
+            return JsonResponse({'success': True, 'message': 'Login erfolgreich'})
+        return JsonResponse({'success': False, 'message': 'Ungültiger Benutzername oder Passwort'}, status=401)
+    return JsonResponse({'success': False, 'message': 'Nur POST-Requests sind erlaubt'}, status=405)
 
 class CustomerView(APIView):
     # Testweise AllowAny weil die Authentifizierung nicht funktioniert!

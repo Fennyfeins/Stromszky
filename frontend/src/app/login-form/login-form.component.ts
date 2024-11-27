@@ -17,29 +17,31 @@ username: any;
     private router: Router) { }
 
     onSubmit(): void {
-      /* this.authService.login(this.username, this.password).subscribe(
-        (response) => {
+      this.authService.login(this.username, this.password).subscribe({
+        next: (response) => {
           if (response.success) {
-            this.dialogRef.close(true);
+            console.log('Login erfolgreich');
             this.router.navigate(['/table']);
           } else {
-            alert('Login fehlgeschlagen. Bitte überprüfen Sie Ihre Eingaben.');
+            console.log('Login fehlgeschlagen');
           }
         },
-        (error) => {
-          alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.');
-          console.error(error);
+        error: (error) => {
+          console.error('Ein Fehler ist aufgetreten:', error);
+        },
+        complete: () => {
+          console.log('Anfrage abgeschlossen');
         }
-      ); */
+      });
 
-      this.authService.confirm(); // Markiere den Benutzer als "eingeloggt"
+      // Test des Dialogs unabhaengig von den Credentials
+      /* this.authService.confirm();
 
-      // Überprüfe, ob der Benutzer erfolgreich bestätigt wurde
       if (this.authService.isUserConfirmed()) {
-        this.dialogRef.close(true); // Schließe den Dialog
-        this.router.navigate(['/table']); // Navigiere zur Tabelle
+        this.dialogRef.close(true);
+        this.router.navigate(['/table']);
       } else {
         alert('Login fehlgeschlagen. Bitte überprüfen Sie Ihre Eingaben.');
-      }
+      } */
     }
 }
