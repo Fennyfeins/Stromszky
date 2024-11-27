@@ -1,6 +1,6 @@
-<h1 mat-dialog-title>Login</h1>
+<h1 mat-dialog-title>Registrieren</h1>
 <div mat-dialog-content>
-  <form (ngSubmit)="onSubmit()">
+  <form>
     <mat-form-field appearance="fill">
       <mat-label>Benutzername</mat-label>
       <input matInput [(ngModel)]="username" name="username" required />
@@ -10,10 +10,14 @@
       <mat-label>Passwort</mat-label>
       <input matInput [(ngModel)]="password" name="password" type="password" required />
     </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Passwort bestätigen</mat-label>
+      <input matInput [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required />
+    </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Abbrechen</button>
-  <button mat-button (click)="onSubmit()" [disabled]="!username || !password">Anmelden</button>
-  <button mat-button color="primary" (click)="openRegisterDialog()">Registrieren</button>
+  <button mat-button (click)="onRegister()">Registrieren</button>
 </div>

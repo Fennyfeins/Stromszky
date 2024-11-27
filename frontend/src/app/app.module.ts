@@ -23,6 +23,7 @@ import { CustomerTableComponent } from './customer-table/customer-table.componen
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
     EditDialogComponent,
     LoginPageComponent,
     LoginFormComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
