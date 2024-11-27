@@ -25,6 +25,7 @@ export class LoginFormComponent {
       next: (response) => {
         if (response.success) {
           console.log('Login erfolgreich');
+          this.authService.confirm()
           this.router.navigate(['/table']);
           this.dialogRef.close(true);
         } else {
