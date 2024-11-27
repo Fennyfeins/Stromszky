@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  isConfirmed: boolean = false;
 
   constructor(
     private authService: AuthService, 
@@ -15,10 +16,12 @@ export class AppComponent {
   ) {}
 
   ngOnInit(): void {
+    this.isConfirmed = this.authService.isUserConfirmed();
   }
   
   logout(): void {
     this.authService.logout();
+    this.isConfirmed = false; 
     console.log('Benutzer wurde ausgeloggt.');
     this.router.navigate(['/login']);
   }
