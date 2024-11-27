@@ -7,6 +7,7 @@ from django.views import View
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.http import JsonResponse
 import json
+from django.contrib.auth.models import User
 
 from .models import Customer
 from rest_framework.views import APIView
@@ -29,6 +30,39 @@ def login_view(request):
             return JsonResponse({'success': True, 'message': 'Login erfolgreich'})
         return JsonResponse({'success': False, 'message': 'Ungültiger Benutzername oder Passwort'}, status=401)
     return JsonResponse({'success': False, 'message': 'Nur POST-Requests sind erlaubt'}, status=405)
+
+@csrf_exempt
+def register_view(request):
+    if request.method == 'POST':
+        try:
+            # JSON-Daten aus der Anfrage extrahieren
+            data = json.loads(request.body)
+            username = data.get('username')
+            password = data.get('password')
+            confirm_password = data.get('confirm_password')
+
+            # Überprüfen, ob alle Felder ausgefüllt sind
+            if not username or not password or not confirm_password:
+                return JsonResponse({'success': False, 'message': 'Alle Felder sind erforderlich'}, status=400)
+
+            # Überprüfen, ob die Passwörter übereinstimmen
+            if password != confirm_password:
+                return JsonResponse({'success': False, 'message': 'Passwörter stimmen nicht überein'}, status=400)
+
+            # Überprüfen, ob der Benutzername bereits existiert
+            if User.objects.filter(username=username).exists():
+                return JsonResponse({'success': False, 'message': 'Benutzername ist bereits vergeben'}, status=400)
+
+            # Benutzer erstellen
+            user = User.objects.create_user(username=username, password=password)
+            user.save()
+
+            return JsonResponse({'success': True, 'message': 'Benutzer erfolgreich registriert'}, status=201)
+
+        except Exception as e:
+            return JsonResponse({'success': False, 'message': str(e)}, status=500)
+    else:
+        return JsonResponse({'success': False, 'message': 'Nur POST-Requests sind erlaubt'}, status=405)
 
 class CustomerView(APIView):
     # Testweise AllowAny weil die Authentifizierung nicht funktioniert!
