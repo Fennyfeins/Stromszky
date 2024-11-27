@@ -8,7 +8,12 @@
 }
 
 header {
-    height: 100vh;
+    min-height: 100vh;
     background-image: url(../../public/mountains-2120004_1920.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);      
 }

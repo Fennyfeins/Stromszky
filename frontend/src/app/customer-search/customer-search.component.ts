@@ -14,19 +14,10 @@ export class CustomerSearchComponent implements OnInit{
 
   // $=Namenskonvention für Variablen mit Observer. 
   // !=Meldet dem Compiler dass die Variable erst später Initialisiert wird.
-  customer$!: Observable<Customer>;
+  //customer$!: Observable<Customer>;
 
-  constructor(
-    private apiService: ApiService, 
-    private authService: AuthService, 
-    private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {
-  }
-
-  logout(): void {
-    this.authService.logout();
-    console.log('Benutzer wurde ausgeloggt.');
-    this.router.navigate(['/login']);
   }
 }

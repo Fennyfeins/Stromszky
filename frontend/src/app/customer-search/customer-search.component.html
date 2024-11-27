@@ -1,19 +1,1 @@
-
-<div>
-    <button mat-raised-button (click)="logout()">Logout</button>
-</div>
-
-<ng-container *ngIf="customer$ | async as customer">
-    <p>{{ customer.id }}</p>
-    <p>{{ customer.firstname }}</p>
-    <p>{{ customer.surname }}</p>
-    <p>{{ customer.dateOfBirth }}</p>
-    <p>{{ customer.phone }}</p>
-    <p>{{ customer.street }}</p>
-    <p>{{ customer.number }}</p>
-    <p>{{ customer.postalCode }}</p>
-    <p>{{ customer.city }}</p>
-    <p>{{ customer.iban }}</p>
-</ng-container>
-
 <app-customer-table></app-customer-table>
