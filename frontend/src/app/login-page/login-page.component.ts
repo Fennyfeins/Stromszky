@@ -13,12 +13,15 @@ export class LoginPageComponent implements OnInit{
   
   ngOnInit(): void {
     const dialogRef = this.dialog.open(LoginFormComponent, {
+      width: '400px',
       disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         this.router.navigate(['/table']);
+      } else {
+        console.log('Login abgebrochen.');
       }
     });
   }
