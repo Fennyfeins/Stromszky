@@ -17,6 +17,11 @@ export class AuthService {
     return this.http.post<{ success: boolean }>(this.apiUrlLogin, { username, password });
   }
 
+  logout(): void {
+    this.resetIsUserConfirmed();
+    //sessionStorage.removeItem('authToken');
+  }
+
   register(data: { username: string; password: string; confirm_password: string }): Observable<{ success: boolean; message: string }> {
     return this.http.post<{ success: boolean; message: string }>(this.apiUrlRegister, data);
   }
@@ -29,5 +34,9 @@ export class AuthService {
 
   isUserConfirmed(): boolean {
     return sessionStorage.getItem(this.storageKey) === 'true';
+  }
+
+  resetIsUserConfirmed(): void {
+    sessionStorage.setItem(this.storageKey, 'false');
   }
 }

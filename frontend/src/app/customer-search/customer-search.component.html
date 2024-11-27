@@ -1,4 +1,8 @@
 
+<div>
+    <button mat-raised-button (click)="logout()">Logout</button>
+</div>
+
 <ng-container *ngIf="customer$ | async as customer">
     <p>{{ customer.id }}</p>
     <p>{{ customer.firstname }}</p>
