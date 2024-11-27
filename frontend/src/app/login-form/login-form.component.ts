@@ -22,12 +22,14 @@ username: any;
           if (response.success) {
             console.log('Login erfolgreich');
             this.router.navigate(['/table']);
+            this.dialogRef.close(true);
           } else {
             console.log('Login fehlgeschlagen');
           }
         },
         error: (error) => {
           console.error('Ein Fehler ist aufgetreten:', error);
+          alert('Ein Fehler ist aufgetreten');
         },
         complete: () => {
           console.log('Anfrage abgeschlossen');
