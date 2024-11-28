@@ -45,3 +45,4 @@ Thumbs.db
 venv/
 backend/api/__pycache__/
 backend/backend/__pycache__/
+.vs/
