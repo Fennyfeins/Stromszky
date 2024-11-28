@@ -1,0 +1,26 @@
+@import url("https//fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    height: 100vh;
+    background-image: url(./image/mountains-2120004_1920.jpg);
+    background-color: rgba(0, 0, 0, 0.5);      
+}
+
+nav {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+
+}
