@@ -1,0 +1,74 @@
+<form [formGroup]="myform" (ngSubmit)="onSave()">
+
+  <!-- Titel mit dynamischen Daten -->
+  <h1 mat-dialog-title>{{data?.title || 'default'}}</h1>
+
+  <div mat-dialog-content>
+    <!-- ID-Feld -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>id</mat-label>
+      <input matInput formControlName="id">
+    </mat-form-field>
+
+    <!-- Vorname -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>firstname</mat-label>
+      <input matInput formControlName="firstname">
+    </mat-form-field>
+
+    <!-- Nachname -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>surname</mat-label>
+      <input matInput formControlName="surname">
+    </mat-form-field>
+
+    <!-- Geburtsdatum -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>dateOfBirth</mat-label>
+      <input matInput formControlName="dateOfBirth">
+    </mat-form-field>
+
+    <!-- Telefonnummer -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>phone</mat-label>
+      <input matInput formControlName="phone">
+    </mat-form-field>
+
+    <!-- Straße -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>street</mat-label>
+      <input matInput formControlName="street">
+    </mat-form-field>
+
+    <!-- Hausnummer -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>number</mat-label>
+      <input matInput formControlName="number">
+    </mat-form-field>
+
+    <!-- Postleitzahl -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>postalCode</mat-label>
+      <input matInput formControlName="postalCode">
+    </mat-form-field>
+
+    <!-- Stadt -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>city</mat-label>
+      <input matInput formControlName="city">
+    </mat-form-field>
+
+    <!-- IBAN -->
+    <mat-form-field class="edit-fields" appearance="fill">
+      <mat-label>iban</mat-label>
+      <input matInput formControlName="iban">
+    </mat-form-field>
+  </div>
+
+  <!-- Aktionen -->
+  <div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Abbrechen</button>
+    <button mat-button (click)="onSubmit()">Speichern</button>
+  </div>
+
+</form>

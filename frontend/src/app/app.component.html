@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stormzky</title>
+    <link rel="stylesheet" href="app.component.scss"/>
+</head>
+<body>
+    <header>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class="overlay">
+        </div>
+
+        <div>
+            <button *ngIf="isConfirmed" mat-raised-button (click)="logout()">Logout</button>
+        </div>
+
+    </header>
+    
+</body>
+</html>

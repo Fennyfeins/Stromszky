@@ -1,0 +1,88 @@
+<mat-card>
+
+    <mat-card-header>
+        <mat-form-field>
+            <input matInput (keyup)="Filterchange($event)" placeholder="Enter the Text"/>
+        </mat-form-field>
+
+        <button mat-fab extended class="add_customer_btn" (click)="OpenEmptyDialog()">
+            <mat-icon>add</mat-icon>
+            Add Customer
+        </button>
+    </mat-card-header>
+
+    <mat-card-content>
+
+        <table matSort mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="id">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> id </th>
+                <td mat-cell *matCellDef="let element">{{element.id}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="firstname">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> firstname </th>
+                <td mat-cell *matCellDef="let element">{{element.firstname}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="surname">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> surname </th>
+                <td mat-cell *matCellDef="let element">{{element.surname}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="dateOfBirth">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> dateOfBirth </th>
+                <td mat-cell *matCellDef="let element">{{element.dateOfBirth}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="phone">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> phone </th>
+                <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="street">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> street </th>
+                <td mat-cell *matCellDef="let element">{{element.street}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="number">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> number </th>
+                <td mat-cell *matCellDef="let element">{{element.number}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="postalCode">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> postalCode </th>
+                <td mat-cell *matCellDef="let element">{{element.postalCode}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="city">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> city </th>
+                <td mat-cell *matCellDef="let element">{{element.city}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="iban">
+                <th mat-sort-header mat-header-cell *matHeaderCellDef=""> iban </th>
+                <td mat-cell *matCellDef="let element">{{element.iban}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="edit">
+                <th mat-header-cell *matHeaderCellDef=""> edit </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-fab class="table-button" (click)="OpenDialog(element)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-fab class="table-button" (click)="DeleteRow(element)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr>
+        </table>
+
+    </mat-card-content>
+    <mat-card-footer>
+        <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons=""></mat-paginator>
+    </mat-card-footer>
+</mat-card>
