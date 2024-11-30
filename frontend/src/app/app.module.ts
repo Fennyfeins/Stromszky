@@ -14,6 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
 //Angular Forms
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -24,6 +25,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { GridListComponent } from './grid-list/grid-list.component';
 
 
 @NgModule({
@@ -35,6 +37,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     LoginPageComponent,
     LoginFormComponent,
     RegisterFormComponent,
+    GridListComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
+    MatGridListModule,
 
     //Angular Forms
     ReactiveFormsModule,
