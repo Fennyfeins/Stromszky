@@ -1,10 +1,25 @@
 <mat-grid-list cols="8" rowHeight="100px">
-    <mat-grid-tile
-      *ngFor="let tile of tiles"
-      [colspan]="tile.cols"
-      [rowspan]="tile.rows"
-      [style.background]="tile.color">
-      {{ tile.text }}
-    </mat-grid-tile>
+
+  <mat-grid-tile
+  [colspan]="tiles[0].cols"
+  [rowspan]="tiles[0].rows"
+  [style.background]="tiles[0].color">
+  {{tiles[0].text}}
+</mat-grid-tile>
+
+<mat-grid-tile
+  [colspan]="tiles[1].cols"
+  [rowspan]="tiles[1].rows"
+  [style.background]="tiles[1].color">
+  {{tiles[1].text}}
+</mat-grid-tile>
+
+<mat-grid-tile
+  [colspan]="tiles[2].cols"
+  [rowspan]="tiles[2].rows"
+  [style.background]="tiles[2].color">
+  <app-customer-search></app-customer-search>
+</mat-grid-tile>
+
   </mat-grid-list>
   
