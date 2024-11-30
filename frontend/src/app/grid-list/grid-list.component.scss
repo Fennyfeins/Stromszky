@@ -2,9 +2,28 @@ mat-grid-tile {
     font-size: 16px;
     text-align: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    justify-content: stretch;
     color: white;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
+  
+  app-customer-table {
+    flex: 1; /* Kind-Elemente sollen sich an den Container anpassen */
+    width: 100%; /* Sicherstellen, dass die Breite 100% ist */
+    height: 100%; /* Sicherstellen, dass die Höhe 100% ist */
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end; /* Button nach rechts ausrichten */
+    align-items: center; /* Vertikale Zentrierung */
+    height: 100%; /* Sicherstellen, dass der Container die volle Höhe hat */
+    padding: 0 10px; /* Optional: Innenabstand für den Button */
+  }
+  
+  button {
+    margin-left: auto; /* Sicherheitshalber, um andere Inhalte zu ignorieren */
+  }
+  
   

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { AuthService } from '../auth.service.js';
+import { Router } from '@angular/router';
 
 export interface Tile {
   color: string;
@@ -15,8 +16,23 @@ export interface Tile {
 })
 export class GridListComponent implements OnInit {
   tiles: Tile[] = [];
+  isConfirmed: boolean = false;
 
-  constructor() {}
+  constructor(
+    private authService: AuthService, 
+    private router: Router,
+  ) {}
+  
+  logout(): void {
+    this.authService.logout();
+    this.updateButtonStatus(); 
+    console.log('Benutzer wurde ausgeloggt.');
+    this.router.navigate(['/login']);
+  }
+
+  private updateButtonStatus(): void {
+    this.isConfirmed = this.authService.isUserConfirmed();
+  }
 
   ngOnInit(): void {
     this.tiles = [
