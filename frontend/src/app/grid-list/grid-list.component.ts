@@ -17,6 +17,7 @@ export interface Tile {
 export class GridListComponent implements OnInit {
   tiles: Tile[] = [];
   isConfirmed: boolean = false;
+  isSidebarOpen = true;
 
   constructor(
     private authService: AuthService, 
@@ -32,6 +33,10 @@ export class GridListComponent implements OnInit {
 
   private updateButtonStatus(): void {
     this.isConfirmed = this.authService.isUserConfirmed();
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
   }
 
   ngOnInit(): void {

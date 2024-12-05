@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { LoginFormComponent } from '../login-form/login-form.component';
+import { AuthService } from '../auth.service.js';
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +10,14 @@ import { LoginFormComponent } from '../login-form/login-form.component';
   styleUrl: './login-page.component.scss'
 })
 export class LoginPageComponent implements OnInit{
-  constructor(private dialog: MatDialog, private router: Router) {}
+  
+  isConfirmed: boolean = false;
+
+  constructor(
+    private dialog: MatDialog, 
+    private router: Router,
+    private authService: AuthService,
+  ) {}
   
   ngOnInit(): void {
     const dialogRef = this.dialog.open(LoginFormComponent, {
@@ -24,6 +32,17 @@ export class LoginPageComponent implements OnInit{
         console.log('Login abgebrochen.');
       }
     });
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.updateButtonStatus(); 
+    console.log('Benutzer wurde ausgeloggt.');
+    this.router.navigate(['/login']);
+  }
+
+  private updateButtonStatus(): void {
+    this.isConfirmed = this.authService.isUserConfirmed();
   }
 
 }

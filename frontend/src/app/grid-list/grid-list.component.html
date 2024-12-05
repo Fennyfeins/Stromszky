@@ -4,7 +4,15 @@
   [colspan]="tiles[0].cols"
   [rowspan]="tiles[0].rows"
   [style.background]="tiles[0].color">
-  {{tiles[0].text}}
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="isSidebarOpen">
+      <p>Sidebar Content</p>
+      <button mat-raised-button (click)="toggleSidebar()">Toggle Sidebar</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <p>Main content area inside the sidebar tile.</p>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </mat-grid-tile>
 
 <mat-grid-tile

@@ -15,6 +15,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatSidenavModule } from '@angular/material/sidenav';
 //Angular Forms
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -55,6 +56,7 @@ import { GridListComponent } from './grid-list/grid-list.component';
     MatInputModule,
     MatDialogModule,
     MatGridListModule,
+    MatSidenavModule,
 
     //Angular Forms
     ReactiveFormsModule,

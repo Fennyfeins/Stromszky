@@ -26,4 +26,13 @@ mat-grid-tile {
     margin-left: auto; /* Sicherheitshalber, um andere Inhalte zu ignorieren */
   }
   
+  .sidenav-container {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+  }
   
