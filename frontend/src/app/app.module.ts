@@ -27,6 +27,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { GridListComponent } from './grid-list/grid-list.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { GridListComponent } from './grid-list/grid-list.component';
     LoginFormComponent,
     RegisterFormComponent,
     GridListComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

@@ -25,14 +25,11 @@ mat-grid-tile {
   button {
     margin-left: auto; /* Sicherheitshalber, um andere Inhalte zu ignorieren */
   }
-  
-  .sidenav-container {
-    height: 100%;
+
+  app-sidebar {
+    flex: 1; /* Sidebar soll sich komplett an den Tile anpassen */
     width: 100%;
-    display: block;
+    height: 100%;
   }
   
-  mat-sidenav {
-    width: 250px;
-  }
   

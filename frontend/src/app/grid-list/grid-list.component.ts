@@ -17,7 +17,7 @@ export interface Tile {
 export class GridListComponent implements OnInit {
   tiles: Tile[] = [];
   isConfirmed: boolean = false;
-  isSidebarOpen = true;
+  
 
   constructor(
     private authService: AuthService, 
@@ -35,15 +35,11 @@ export class GridListComponent implements OnInit {
     this.isConfirmed = this.authService.isUserConfirmed();
   }
 
-  toggleSidebar() {
-    this.isSidebarOpen = !this.isSidebarOpen;
-  }
-
   ngOnInit(): void {
     this.tiles = [
-      {text: 'One', cols: 1, rows: 13, color: 'lightblue'},
-      {text: 'Two', cols: 7, rows: 2, color: 'lightgreen'},
-      {text: 'Three', cols: 7, rows: 11, color: 'lightpink'},
+      {text: 'One', cols: 1, rows: 13, color: 'black'},
+      {text: 'Two', cols: 7, rows: 2, color: 'black'},
+      {text: 'Three', cols: 7, rows: 11, color: 'black'},
     ];
   }
 }

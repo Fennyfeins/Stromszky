@@ -37,8 +37,6 @@ export class LoginPageComponent implements OnInit{
   logout(): void {
     this.authService.logout();
     this.updateButtonStatus(); 
-    console.log('Benutzer wurde ausgeloggt.');
-    this.router.navigate(['/login']);
   }
 
   private updateButtonStatus(): void {

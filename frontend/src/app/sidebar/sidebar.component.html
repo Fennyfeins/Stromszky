@@ -1,0 +1,10 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" [(opened)]="isSidebarOpen">
+      <p>Sidebar Content</p>
+      <button mat-raised-button (click)="toggleSidebar()">Toggle Sidebar</button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <p>Main content inside the sidebar component.</p>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
