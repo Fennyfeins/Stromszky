@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   private storageKey = 'isConfirmed';
-  private apiUrlLogin = 'http://127.0.0.1:8000/api/login/';
-  private apiUrlRegister = 'http://127.0.0.1:8000/api/register/';
+  private apiUrlLogin = 'https://stromszky.de/api/login/';
+  private apiUrlRegister = 'https://stromszky.de/api/register/';
 
   constructor(
     private http: HttpClient,

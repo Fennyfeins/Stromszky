@@ -9,7 +9,7 @@ import { Customer } from './customer';
 })
 export class ApiService {
 
-  private apiUrl = 'http://localhost:8000/api/customers/';
+  private apiUrl = 'https://stromszky.de/api/customers/';
 
   constructor(private http: HttpClient) {
   }
