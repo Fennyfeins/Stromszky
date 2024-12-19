@@ -73,9 +73,9 @@ class CustomerView(APIView):
         customers = Customer.objects.all()
         serializer = CustomerSerializer(customers, many=True)
         response = Response(serializer.data)
-        response["Cache-Control"] = "no-cache, no-store, must-revalidate"
-        response["Pragma"] = "no-cache"
-        response["Expires"] = "0"
+        response["Cache-Control"] = "no-cache"
+        #response["Pragma"] = "no-cache"
+        #response["Expires"] = "0"
         return response
 
     def post(self, request):
