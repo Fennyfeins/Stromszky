@@ -24,7 +24,7 @@ export class EditDialogComponent implements OnInit{
     this.inputdata = this.data;
 
     this.myform = this.buildr.group({
-      //id: [this.data.id || ''],
+      id: [this.data.id || ''],
       firstname: [this.data.firstname || ''],
       surname: [this.data.surname || ''],
       dateOfBirth: [this.data.dateOfBirth || ''],
